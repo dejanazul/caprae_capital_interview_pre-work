@@ -16,7 +16,7 @@ A Streamlit-based platform for collecting, exploring, and analyzing company data
 
 ```sh
 git clone https://github.com/dejanazul/caprae_capital_interview_pre-work
-cd https://github.com/dejanazul/caprae_capital_interview_pre-work
+cd caprae_capital_interview_pre-work
 ```
 
 ### 2. Install Python Dependencies
@@ -27,10 +27,16 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 3. Set Up Environment Variables
-Create a .env file in the root directory and add your Google Gemini API key:
+### 3. Set Up Environment Variables and Download Checkpoint
+Create a [.env] file in the root directory and add your Google Gemini API key:
 ```sh
 GEMINI_API_KEY=your_gemini_api_key_here
+```
+
+Download checkpoint for Neural Scraper
+```sh
+git lfs install
+git clone https://huggingface.co/Vincero/neural_scrapper_fixed
 ```
 
 ### 4. Start the NeuScraper Service
@@ -40,9 +46,9 @@ GEMINI_API_KEY=your_gemini_api_key_here
 cd NeuScraper/app
 ```
 
-2️⃣ **Fill in the model path in app**
+2️⃣ **Fill in the neural scraper checkpoint path in app**
 ```bash
-args.model_path = "/path/to/your/model"
+args.model_path = "path/to/your/model/fixed_training_state_checkpoint.tar"
 ```
 3️⃣ **Deploy NeuScraper**
 ```sh

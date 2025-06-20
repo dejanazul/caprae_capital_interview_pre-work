@@ -21,7 +21,7 @@ class InputData(BaseModel):
 def init_model():
     parser = create_parser()
     args, _ = parser.parse_known_args()
-    args.model_path = "path/to/your/mode/training_set_checkpoint.tar"
+    args.model_path = '/Volumes/One Touch/AI_MODEL/neuscraper-v1-clueweb/fixed_training_state_checkpoint.tar'
     args.device = 'cuda' if torch.cuda.is_available() else 'cpu'
     model = ContentExtractionDeepModel(args)
     return model, args

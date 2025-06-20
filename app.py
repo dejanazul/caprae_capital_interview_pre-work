@@ -28,7 +28,6 @@ class CompanyIntelligencePipeline:
         if not os.path.exists(data_dir):
             os.makedirs(data_dir)
 
-        # genai.configure(api_key=self.gemini_api_key)
         self.gemini_client = genai.Client(api_key=self.gemini_api_key)
 
     def scrape_yellow_pages(self, search_query, page_limit=1, delay=5):
